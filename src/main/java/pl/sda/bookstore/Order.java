@@ -1,22 +1,23 @@
 package pl.sda.bookstore;
 
+import pl.sda.bookstore.menu.customer.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
 
     private final List<Book> books = new ArrayList<>();
+    private final Customer customer;
 
-    private final String name;
-    private final String surname;
-    private final String address;
+    public Customer getCustomer() {
+        return customer;
+    }
 
-    public Order(String user) {
-        String[] split = user.split(",");
+    public Order(Customer customer) {
 
-        this.name = split[0];
-        this.surname = split[1];
-        this.address = split[2];
+        this.customer=customer;
+
     }
 
     public void addBook(Book book) {
